@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_fragments_illustrationQueryPage-->
+    <af:panelGroupLayout layout="vertical" id="pgl1"
+                         binding="#{backingBeanScope.backing_fragments_illustrationQueryPage.pgl1}">
+        <af:panelHeader text="Search Page" id="ph2"
+                        binding="#{backingBeanScope.backing_fragments_illustrationQueryPage.ph2}">
+            <af:query id="qryId1" headerText="Search" disclosed="true"
+                      value="#{bindings.DssIllustrationHdViewCriteriaQuery.queryDescriptor}"
+                      model="#{bindings.DssIllustrationHdViewCriteriaQuery.queryModel}"
+                      queryListener="#{bindings.DssIllustrationHdViewCriteriaQuery.processQuery}"
+                      queryOperationListener="#{bindings.DssIllustrationHdViewCriteriaQuery.processQueryOperation}"
+                      resultComponentId="::pc1:resId1"
+                      binding="#{backingBeanScope.backing_fragments_illustrationQueryPage.qryId1}"
+                      saveQueryMode="hidden" modeChangeVisible="false"/>
+        </af:panelHeader>
+        <af:panelCollection id="pc1" binding="#{backingBeanScope.backing_fragments_illustrationQueryPage.pc1}"
+                            styleClass="AFStretchWidth" featuresOff="detach viewMenu">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar">
+                <af:toolbar id="t2" binding="#{backingBeanScope.backing_fragments_illustrationQueryPage.t2}">
+                    <af:button text="Create" id="b2"
+                               binding="#{backingBeanScope.backing_fragments_illustrationQueryPage.b2}"
+                               action="goCreate"/>
+                </af:toolbar>
+            </f:facet>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.DssIllustrationHdView2.collectionModel}" var="row"
+                      rows="#{bindings.DssIllustrationHdView2.rangeSize}"
+                      emptyText="#{bindings.DssIllustrationHdView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.DssIllustrationHdView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.DssIllustrationHdView2.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.DssIllustrationHdView2.rangeSize}" id="resId1"
+                      binding="#{backingBeanScope.backing_fragments_illustrationQueryPage.resId1}">
+                <af:column headerText="#{bindings.DssIllustrationHdView2.hints.HdIdPk.label}" id="c10" rendered="false">
+                    <af:inputText value="#{row.bindings.HdIdPk.inputValue}"
+                                  label="#{bindings.DssIllustrationHdView2.hints.HdIdPk.label}"
+                                  required="#{bindings.DssIllustrationHdView2.hints.HdIdPk.mandatory}"
+                                  columns="#{bindings.DssIllustrationHdView2.hints.HdIdPk.displayWidth}"
+                                  maximumLength="#{bindings.DssIllustrationHdView2.hints.HdIdPk.precision}"
+                                  shortDesc="#{bindings.DssIllustrationHdView2.hints.HdIdPk.tooltip}" id="it1">
+                        <f:validator binding="#{row.bindings.HdIdPk.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.DssIllustrationHdView2.hints.HdIdPk.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column headerText="#{bindings.DssIllustrationHdView2.hints.IllustrationDocNo.label}" id="c8"
+                           width="200" align="center">
+                    <af:outputText value="#{row.IllustrationDocNo}"
+                                   shortDesc="#{bindings.DssIllustrationHdView2.hints.IllustrationDocNo.tooltip}"
+                                   id="ot8"/>
+                </af:column>
+                <af:column headerText="#{bindings.DssIllustrationHdView2.hints.AgentCode.label}" id="c3" align="center">
+                    <af:outputText value="#{row.AgentCode}"
+                                   shortDesc="#{bindings.DssIllustrationHdView2.hints.AgentCode.tooltip}" id="ot7"/>
+                </af:column>
+                <af:column headerText="#{bindings.DssIllustrationHdView2.hints.AgentName.label}" id="c7" align="center">
+                    <af:outputText value="#{row.AgentName}"
+                                   shortDesc="#{bindings.DssIllustrationHdView2.hints.AgentName.tooltip}" id="ot4"/>
+                </af:column>
+                <af:column headerText="#{bindings.DssIllustrationHdView2.hints.PlanName.label}" id="resId1c1"
+                           width="101" align="center">
+                    <af:outputText value="#{row.PlanName}"
+                                   shortDesc="#{bindings.DssIllustrationHdView2.hints.PlanName.tooltip}" id="ot1"/>
+                </af:column>
+                <af:column headerText="#{bindings.DssIllustrationHdView2.hints.MembershipNo.label}" id="resId1c2"
+                           width="120" align="center">
+                    <af:outputText value="#{row.MembershipNo}"
+                                   shortDesc="#{bindings.DssIllustrationHdView2.hints.MembershipNo.tooltip}" id="ot2">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.DssIllustrationHdView2.hints.MembershipNo.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.DssIllustrationHdView2.hints.WorkflowStatus.label}" id="c4"
+                           align="center">
+                    <af:outputText value="#{row.WorkflowStatus}"
+                                   shortDesc="#{bindings.DssIllustrationHdView2.hints.WorkflowStatus.tooltip}"
+                                   id="ot3"/>
+                </af:column>
+                <af:column id="c2" headerText="Detail" align="center" width="50">
+                    <af:link id="l2" icon="/images/detailsicon_enabled.gif" action="goDetail"/>
+                </af:column>
+                <af:column id="c1" headerText="Update" align="center" width="50">
+                    <af:link id="l1" icon="/images/updateicon_enabled.gif" action="goUpdate"
+                             disabled="#{row.WorkflowStatus eq 'APPROVED' or row.WorkflowStatus eq 'INPROCESS'}"/>
+                </af:column>
+                <af:column id="c6" headerText="Delete" align="center" width="50">
+                    <af:link id="l3" icon="/images/deleteicon_enabled.gif" action="goDelete"
+                             disabled="#{row.WorkflowStatus eq 'APPROVED' or row.WorkflowStatus eq 'INPROCESS'}"/>
+                </af:column>
+                <af:column id="c9" align="center" headerText="Report" width="50">
+                    <af:link id="l4" icon="/images/printLogo.gif"
+                             actionListener="#{CallReport.callDSSReports('DSS_SPECIAL_ILLUSTRATION_REQ', (row.bindings.HdIdPk.inputValue))}"/>
+                </af:column>
+            </af:table>
+        </af:panelCollection>
+    </af:panelGroupLayout>
+</ui:composition>

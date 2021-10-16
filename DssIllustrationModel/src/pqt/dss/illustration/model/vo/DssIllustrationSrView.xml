@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DssIllustrationSrView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="DssIllustrationSr.HD_ID_FK, 
+       DssIllustrationSr.REGULAR_CONTRIBUTION, 
+       DssIllustrationSr.MODE_OF_CONTRIBUTION, 
+       DssIllustrationSr.CONTRIBUTION_INDEX_RATE, 
+       DssIllustrationSr.PAYMENT_TERM, 
+       DssIllustrationSr.PROJECTION_TERM, 
+       DssIllustrationSr.TOPUP_AMOUNT, 
+       DssIllustrationSr.USER_ID_FK, 
+       DssIllustrationSr.ENTER_DATE, 
+       DssIllustrationSr.LAST_UPDATED_BY, 
+       DssIllustrationSr.LAST_UPDATED_DATE, 
+       DssIllustrationSr.SR_ID_PK"
+  FromList="DSS_ILLUSTRATION_SR DssIllustrationSr">
+  <ViewAccessor
+    Name="NoOfYears1"
+    ViewObjectName="pqt.dss.illustration.model.lov.NoOfYears"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="NoOfYears2"
+    ViewObjectName="pqt.dss.illustration.model.lov.NoOfYears"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DssIllustrationDtSetupLOV1"
+    ViewObjectName="pqt.dss.illustration.model.lov.DssIllustrationDtSetupLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ModeOfContributionLOV1"
+    ViewObjectName="pqt.dss.illustration.model.lov.ModeOfContributionLOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_PaymentTerm"
+    ListVOName="NoOfYears1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PaymentTerm"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Noofyears"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Noofyears"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProjectionTerm"
+    ListVOName="NoOfYears2"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectionTerm"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Noofyears"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Noofyears"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ModeOfContribution"
+    ListVOName="ModeOfContributionLOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ModeOfContribution"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Monthly"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Monthly"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="DssIllustrationSr"
+    Entity="pqt.dss.illustration.model.eo.DssIllustrationSr"/>
+  <ViewAttribute
+    Name="HdIdFk"
+    PrecisionRule="true"
+    EntityAttrName="HdIdFk"
+    EntityUsage="DssIllustrationSr"
+    AliasName="HD_ID_FK"/>
+  <ViewAttribute
+    Name="RegularContribution"
+    PrecisionRule="true"
+    EntityAttrName="RegularContribution"
+    EntityUsage="DssIllustrationSr"
+    AliasName="REGULAR_CONTRIBUTION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="pqt.dss.illustration.model.vo.DssIllustrationSrView.RegularContribution_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ModeOfContribution"
+    PrecisionRule="true"
+    EntityAttrName="ModeOfContribution"
+    EntityUsage="DssIllustrationSr"
+    AliasName="MODE_OF_CONTRIBUTION"
+    LOVName="LOV_ModeOfContribution">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="pqt.dss.illustration.model.vo.DssIllustrationSrView.ModeOfContribution_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContributionIndexRate"
+    PrecisionRule="true"
+    EntityAttrName="ContributionIndexRate"
+    EntityUsage="DssIllustrationSr"
+    AliasName="CONTRIBUTION_INDEX_RATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="pqt.dss.illustration.model.vo.DssIllustrationSrView.ContributionIndexRate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PaymentTerm"
+    PrecisionRule="true"
+    EntityAttrName="PaymentTerm"
+    EntityUsage="DssIllustrationSr"
+    AliasName="PAYMENT_TERM"
+    LOVName="LOV_PaymentTerm">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="pqt.dss.illustration.model.vo.DssIllustrationSrView.PaymentTerm_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProjectionTerm"
+    PrecisionRule="true"
+    EntityAttrName="ProjectionTerm"
+    EntityUsage="DssIllustrationSr"
+    AliasName="PROJECTION_TERM"
+    LOVName="LOV_ProjectionTerm">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="pqt.dss.illustration.model.vo.DssIllustrationSrView.ProjectionTerm_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TopupAmount"
+    PrecisionRule="true"
+    EntityAttrName="TopupAmount"
+    EntityUsage="DssIllustrationSr"
+    AliasName="TOPUP_AMOUNT">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="pqt.dss.illustration.model.vo.DssIllustrationSrView.TopupAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserIdFk"
+    PrecisionRule="true"
+    EntityAttrName="UserIdFk"
+    EntityUsage="DssIllustrationSr"
+    AliasName="USER_ID_FK"/>
+  <ViewAttribute
+    Name="EnterDate"
+    PrecisionRule="true"
+    EntityAttrName="EnterDate"
+    EntityUsage="DssIllustrationSr"
+    AliasName="ENTER_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="DssIllustrationSr"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="DssIllustrationSr"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewAttribute
+    Name="SrIdPk"
+    PrecisionRule="true"
+    EntityAttrName="SrIdPk"
+    EntityUsage="DssIllustrationSr"
+    AliasName="SR_ID_PK"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="pqt.dss.illustration.model.DssIllustrationModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

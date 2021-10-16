@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31"
+                id="DssIllustrationFlow_DssIllustrationFlow_illustrationSearchUserPageDef" Package="flow"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="illustrationSearchUser" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="illustrationSearchUser" IsViewObjectMethod="true"
+                  DataControl="dssIllustrationAMDataControl"
+                  InstanceName="data.dssIllustrationAMDataControl.DssIllustrationHdView2"/>
+  </bindings>
+</pageDefinition>

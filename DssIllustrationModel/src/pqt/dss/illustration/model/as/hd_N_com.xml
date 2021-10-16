@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="hd_N_com"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="DssIllustrationHd"
+    Cardinality="1"
+    Source="true"
+    Owner="pqt.dss.illustration.model.eo.DssIllustrationHd"
+    LockLevel="NONE"
+    DeleteContainee="true">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="DssIllustrationHd"/>
+      <Attr Name="_foreignKey" Value="pqt.dss.illustration.model.eo.DssIllustrationHd.PkHdId"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.illustration.model.eo.DssIllustrationHd.HdIdPk"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="DssIllustrationCom"
+    Cardinality="-1"
+    Owner="pqt.dss.illustration.model.eo.DssIllustrationCom">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="DssIllustrationCom"/>
+      <Attr Name="_foreignKey" Value="pqt.dss.illustration.model.eo.DssIllustrationCom.fk_DssIllustrationCom"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.illustration.model.eo.DssIllustrationCom.HdIdFk"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

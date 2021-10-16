@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_flow_Notification.psl1}">
+        <f:facet name="center">
+            <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_flow_Notification.pgl1}"
+                                 layout="vertical">
+                <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_flow_Notification.pfl1}" rows="4">
+                    <af:panelLabelAndMessage label="#{bindings.IllustrationDocNo.hints.label}" id="plam1"
+                                             binding="#{backingBeanScope.backing_flow_Notification.plam1}"
+                                             inlineStyle="font-weight:bolder;" labelStyle="font-weight:bolder;">
+                        <af:outputText value="#{bindings.IllustrationDocNo.inputValue}"
+                                       shortDesc="#{bindings.IllustrationDocNo.hints.tooltip}" id="ot1"
+                                       binding="#{backingBeanScope.backing_flow_Notification.ot1}"/>
+                    </af:panelLabelAndMessage>
+                    <af:inputComboboxListOfValues id="branchNameId"
+                                                  popupTitle="Search and Select: #{bindings.BranchName.hints.label}"
+                                                  value="#{bindings.BranchName.inputValue}"
+                                                  label="#{bindings.BranchName.hints.label}"
+                                                  model="#{bindings.BranchName.listOfValuesModel}"
+                                                  required="#{bindings.BranchName.hints.mandatory}"
+                                                  columns="#{bindings.BranchName.hints.displayWidth}"
+                                                  shortDesc="#{bindings.BranchName.hints.tooltip}"
+                                                  binding="#{backingBeanScope.backing_flow_Notification.branchNameId}"
+                                                  disabled="true" labelStyle="font-weight:bolder;">
+                        <f:validator binding="#{bindings.BranchName.validator}"/>
+                    </af:inputComboboxListOfValues>
+                    <af:inputListOfValues id="agentCodeId"
+                                          popupTitle="Search and Select: #{bindings.AgentCode.hints.label}"
+                                          value="#{bindings.AgentCode.inputValue}"
+                                          label="#{bindings.AgentCode.hints.label}"
+                                          model="#{bindings.AgentCode.listOfValuesModel}"
+                                          required="#{bindings.AgentCode.hints.mandatory}"
+                                          columns="#{bindings.AgentCode.hints.displayWidth}"
+                                          shortDesc="#{bindings.AgentCode.hints.tooltip}"
+                                          binding="#{backingBeanScope.backing_flow_Notification.agentCodeId}"
+                                          disabled="true" labelStyle="font-weight:bolder;">
+                        <f:validator binding="#{bindings.AgentCode.validator}"/>
+                    </af:inputListOfValues>
+                    <af:inputText value="#{bindings.AgentName.inputValue}" label="#{bindings.AgentName.hints.label}"
+                                  required="#{bindings.AgentName.hints.mandatory}"
+                                  columns="#{bindings.AgentName.hints.displayWidth}"
+                                  maximumLength="#{bindings.AgentName.hints.precision}"
+                                  shortDesc="#{bindings.AgentName.hints.tooltip}" id="it4"
+                                  binding="#{backingBeanScope.backing_flow_Notification.it4}" disabled="true"
+                                  labelStyle="font-weight:bolder;">
+                        <f:validator binding="#{bindings.AgentName.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.PlanName.inputValue}" label="#{bindings.PlanName.hints.label}"
+                                  required="#{bindings.PlanName.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.PlanName.hints.displayWidth}"
+                                  maximumLength="#{bindings.PlanName.hints.precision}"
+                                  shortDesc="#{bindings.PlanName.hints.tooltip}" id="it2"
+                                  binding="#{backingBeanScope.backing_flow_Notification.it2}" disabled="true">
+                        <f:validator binding="#{bindings.PlanName.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.MembershipNo.inputValue}"
+                                  label="#{bindings.MembershipNo.hints.label}"
+                                  required="#{bindings.MembershipNo.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.MembershipNo.hints.displayWidth}"
+                                  maximumLength="#{bindings.MembershipNo.hints.precision}"
+                                  shortDesc="#{bindings.MembershipNo.hints.tooltip}" id="it3"
+                                  binding="#{backingBeanScope.backing_flow_Notification.it3}" disabled="true">
+                        <f:validator binding="#{bindings.MembershipNo.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.MembershipNo.format}"/>
+                    </af:inputText>
+                    <af:inputDate value="#{bindings.DateOfBirth.inputValue}" readOnly="true"
+                                  label="#{bindings.DateOfBirth.hints.label}"
+                                  required="#{bindings.DateOfBirth.hints.mandatory}"
+                                  columns="#{bindings.DateOfBirth.hints.displayWidth}"
+                                  shortDesc="#{bindings.DateOfBirth.hints.tooltip}" id="id1"
+                                  binding="#{backingBeanScope.backing_flow_Notification.id1}" disabled="true">
+                        <f:validator binding="#{bindings.DateOfBirth.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.DateOfBirth.format}"/>
+                    </af:inputDate>
+                    <af:inputText value="#{bindings.ReasonSpecial.inputValue}"
+                                  label="#{bindings.ReasonSpecial.hints.label}"
+                                  required="#{bindings.HdIdPk.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.ReasonSpecial.hints.displayWidth}"
+                                  maximumLength="#{bindings.HdIdPk.hints.precision}"
+                                  shortDesc="#{bindings.HdIdPk.hints.tooltip}" id="it1"
+                                  binding="#{backingBeanScope.backing_flow_Notification.it1}" disabled="true">
+                        <f:validator binding="#{bindings.HdIdPk.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.HdIdPk.format}"/>
+                    </af:inputText>
+                </af:panelFormLayout>
+                <af:panelDashboard id="pd1" binding="#{backingBeanScope.backing_flow_Notification.pd1}"
+                                   dimensionsFrom="children" rowHeight="140px">
+                    <af:panelBox text="Alteration Details" id="pb1"
+                                 binding="#{backingBeanScope.backing_flow_Notification.pb1}" showDisclosure="false">
+                        <f:facet name="toolbar"/>
+                        <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_flow_Notification.pfl2}">
+                            <af:inputDate value="#{bindings.CommencementDate.inputValue}"
+                                          label="#{bindings.CommencementDate.hints.label}"
+                                          required="#{bindings.CommencementDate.hints.mandatory}"
+                                          columns="#{bindings.CommencementDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.CommencementDate.hints.tooltip}" id="id2"
+                                          binding="#{backingBeanScope.backing_flow_Notification.id2}" disabled="true">
+                                <f:validator binding="#{bindings.CommencementDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.CommencementDate.format}"/>
+                            </af:inputDate>
+                            <af:inputDate value="#{bindings.AlternationDate.inputValue}"
+                                          label="#{bindings.AlternationDate.hints.label}"
+                                          required="#{bindings.AlternationDate.hints.mandatory}"
+                                          columns="#{bindings.AlternationDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.AlternationDate.hints.tooltip}" id="id3"
+                                          binding="#{backingBeanScope.backing_flow_Notification.id3}" disabled="true">
+                                <f:validator binding="#{bindings.AlternationDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.AlternationDate.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.AlternationCash.inputValue}"
+                                          label="#{bindings.AlternationCash.hints.label}"
+                                          required="#{bindings.AlternationCash.hints.mandatory}"
+                                          columns="#{bindings.AlternationCash.hints.displayWidth}"
+                                          maximumLength="#{bindings.AlternationCash.hints.precision}"
+                                          shortDesc="#{bindings.AlternationCash.hints.tooltip}" id="it5"
+                                          binding="#{backingBeanScope.backing_flow_Notification.it5}" disabled="true">
+                                <f:validator binding="#{bindings.AlternationCash.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.AlternationCash.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.AlternationPayment.inputValue}"
+                                          label="#{bindings.AlternationPayment.hints.label}"
+                                          required="#{bindings.AlternationPayment.hints.mandatory}"
+                                          columns="#{bindings.AlternationPayment.hints.displayWidth}"
+                                          maximumLength="#{bindings.AlternationPayment.hints.precision}"
+                                          shortDesc="#{bindings.AlternationPayment.hints.tooltip}" id="it6"
+                                          binding="#{backingBeanScope.backing_flow_Notification.it6}" disabled="true">
+                                <f:validator binding="#{bindings.AlternationPayment.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.AlternationPayment.format}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                    </af:panelBox>
+                </af:panelDashboard>
+                <af:panelBox text="Special Requirement(Please enter only those fields which you desire to be changed from the existing plan)"
+                             id="pb2" binding="#{backingBeanScope.backing_flow_Notification.pb2}"
+                             showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelFormLayout id="pfl3" binding="#{backingBeanScope.backing_flow_Notification.pfl3}" rows="3">
+                        <af:inputText value="#{bindings.RegularContribution.inputValue}"
+                                      label="#{bindings.RegularContribution.hints.label}"
+                                      required="#{bindings.RegularContribution.hints.mandatory}"
+                                      columns="#{bindings.RegularContribution.hints.displayWidth}"
+                                      maximumLength="#{bindings.RegularContribution.hints.precision}"
+                                      shortDesc="#{bindings.RegularContribution.hints.tooltip}" id="it7"
+                                      binding="#{backingBeanScope.backing_flow_Notification.it7}" disabled="true">
+                            <f:validator binding="#{bindings.RegularContribution.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.ModeOfContribution.inputValue}"
+                                            label="#{bindings.ModeOfContribution.label}"
+                                            required="#{bindings.ModeOfContribution.hints.mandatory}"
+                                            shortDesc="#{bindings.ModeOfContribution.hints.tooltip}" id="soc1"
+                                            binding="#{backingBeanScope.backing_flow_Notification.soc1}"
+                                            disabled="true">
+                            <f:selectItems value="#{bindings.ModeOfContribution.items}" id="si1"
+                                           binding="#{backingBeanScope.backing_flow_Notification.si1}"/>
+                            <f:validator binding="#{bindings.ModeOfContribution.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputText value="#{bindings.ContributionIndexRate.inputValue}"
+                                      label="#{bindings.ContributionIndexRate.hints.label}"
+                                      required="#{bindings.ContributionIndexRate.hints.mandatory}"
+                                      columns="#{bindings.ContributionIndexRate.hints.displayWidth}"
+                                      maximumLength="#{bindings.ContributionIndexRate.hints.precision}"
+                                      shortDesc="#{bindings.ContributionIndexRate.hints.tooltip}" id="it8"
+                                      binding="#{backingBeanScope.backing_flow_Notification.it8}" disabled="true">
+                            <f:validator binding="#{bindings.ContributionIndexRate.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.ContributionIndexRate.format}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.PaymentTerm.inputValue}"
+                                            label="#{bindings.PaymentTerm.label}"
+                                            required="#{bindings.PaymentTerm.hints.mandatory}"
+                                            shortDesc="#{bindings.PaymentTerm.hints.tooltip}" id="soc2"
+                                            binding="#{backingBeanScope.backing_flow_Notification.soc2}"
+                                            disabled="true">
+                            <f:selectItems value="#{bindings.PaymentTerm.items}" id="si2"
+                                           binding="#{backingBeanScope.backing_flow_Notification.si2}"/>
+                            <f:validator binding="#{bindings.PaymentTerm.validator}"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.ProjectionTerm.inputValue}"
+                                            label="#{bindings.ProjectionTerm.label}"
+                                            required="#{bindings.ProjectionTerm.hints.mandatory}"
+                                            shortDesc="#{bindings.ProjectionTerm.hints.tooltip}" id="soc3"
+                                            binding="#{backingBeanScope.backing_flow_Notification.soc3}"
+                                            disabled="true">
+                            <f:selectItems value="#{bindings.ProjectionTerm.items}" id="si3"
+                                           binding="#{backingBeanScope.backing_flow_Notification.si3}"/>
+                            <f:validator binding="#{bindings.ProjectionTerm.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputText value="#{bindings.TopupAmount.inputValue}"
+                                      label="#{bindings.TopupAmount.hints.label}"
+                                      required="#{bindings.TopupAmount.hints.mandatory}"
+                                      columns="#{bindings.TopupAmount.hints.displayWidth}"
+                                      maximumLength="#{bindings.TopupAmount.hints.precision}"
+                                      shortDesc="#{bindings.TopupAmount.hints.tooltip}" id="it9"
+                                      binding="#{backingBeanScope.backing_flow_Notification.it9}" disabled="true">
+                            <f:validator binding="#{bindings.TopupAmount.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.TopupAmount.format}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                </af:panelBox>
+                <af:panelBox text="Benifits Details" id="pb3"
+                             binding="#{backingBeanScope.backing_flow_Notification.pb3}" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:table value="#{bindings.DssIllustrationDtView1.collectionModel}" var="row"
+                              rows="#{bindings.DssIllustrationDtView1.rangeSize}"
+                              emptyText="#{bindings.DssIllustrationDtView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.DssIllustrationDtView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.DssIllustrationDtView1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.DssIllustrationDtView1.rangeSize}" id="t1"
+                              binding="#{backingBeanScope.backing_flow_Notification.t1}">
+                        <af:column headerText="#{bindings.DssIllustrationDtView1.hints.Benefits.label}" id="c2"
+                                   width="218">
+                            <af:selectOneChoice value="#{row.bindings.Benefits.inputValue}"
+                                                label="#{row.bindings.Benefits.label}"
+                                                required="#{bindings.DssIllustrationDtView1.hints.Benefits.mandatory}"
+                                                shortDesc="#{bindings.DssIllustrationDtView1.hints.Benefits.tooltip}"
+                                                id="soc4" disabled="true">
+                                <f:selectItems value="#{row.bindings.Benefits.items}" id="si4"/>
+                                <f:validator binding="#{row.bindings.Benefits.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="#{bindings.DssIllustrationDtView1.hints.TermYears.label}" id="c3"
+                                   width="141">
+                            <af:selectOneChoice value="#{row.bindings.TermYears.inputValue}"
+                                                label="#{row.bindings.TermYears.label}"
+                                                required="#{bindings.DssIllustrationDtView1.hints.TermYears.mandatory}"
+                                                shortDesc="#{bindings.DssIllustrationDtView1.hints.TermYears.tooltip}"
+                                                id="soc5" disabled="true">
+                                <f:selectItems value="#{row.bindings.TermYears.items}" id="si5"/>
+                                <f:validator binding="#{row.bindings.TermYears.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="#{bindings.DssIllustrationDtView1.hints.DetailAmount.label}" id="c4"
+                                   width="197">
+                            <af:inputText value="#{row.bindings.DetailAmount.inputValue}"
+                                          label="#{bindings.DssIllustrationDtView1.hints.DetailAmount.label}"
+                                          required="#{bindings.DssIllustrationDtView1.hints.DetailAmount.mandatory}"
+                                          columns="#{bindings.DssIllustrationDtView1.hints.DetailAmount.displayWidth}"
+                                          maximumLength="#{bindings.DssIllustrationDtView1.hints.DetailAmount.precision}"
+                                          shortDesc="#{bindings.DssIllustrationDtView1.hints.DetailAmount.tooltip}"
+                                          id="it11" disabled="true">
+                                <f:validator binding="#{row.bindings.DetailAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.DssIllustrationDtView1.hints.DetailAmount.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.DssIllustrationDtView1.hints.ExtraLoading.label}" id="c5"
+                                   width="202">
+                            <af:inputText value="#{row.bindings.ExtraLoading.inputValue}"
+                                          label="#{bindings.DssIllustrationDtView1.hints.ExtraLoading.label}"
+                                          required="#{bindings.DssIllustrationDtView1.hints.ExtraLoading.mandatory}"
+                                          columns="#{bindings.DssIllustrationDtView1.hints.ExtraLoading.displayWidth}"
+                                          maximumLength="#{bindings.DssIllustrationDtView1.hints.ExtraLoading.precision}"
+                                          shortDesc="#{bindings.DssIllustrationDtView1.hints.ExtraLoading.tooltip}"
+                                          id="it12" disabled="true">
+                                <f:validator binding="#{row.bindings.ExtraLoading.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
+                </af:panelBox>
+                <af:panelBox text="To be filled by the Branch Manager &amp; Requesting Person" id="pb4"
+                             binding="#{backingBeanScope.backing_flow_Notification.pb4}" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelFormLayout id="pfl4" binding="#{backingBeanScope.backing_flow_Notification.pfl4}">
+                        <af:inputText value="#{bindings.NameRp.inputValue}" label="#{bindings.NameRp.hints.label}"
+                                      required="#{bindings.NameRp.hints.mandatory}"
+                                      columns="#{bindings.NameRp.hints.displayWidth}"
+                                      maximumLength="#{bindings.NameRp.hints.precision}"
+                                      shortDesc="#{bindings.NameRp.hints.tooltip}" id="it10"
+                                      binding="#{backingBeanScope.backing_flow_Notification.it10}" disabled="true">
+                            <f:validator binding="#{bindings.NameRp.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.CellNo.inputValue}" label="#{bindings.CellNo.hints.label}"
+                                      required="#{bindings.CellNo.hints.mandatory}"
+                                      columns="#{bindings.CellNo.hints.displayWidth}"
+                                      maximumLength="#{bindings.CellNo.hints.precision}"
+                                      shortDesc="#{bindings.CellNo.hints.tooltip}" id="it13"
+                                      binding="#{backingBeanScope.backing_flow_Notification.it13}" disabled="true">
+                            <f:validator binding="#{bindings.CellNo.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.CellNo.format}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.DateRequest.inputValue}"
+                                      label="#{bindings.DateRequest.hints.label}"
+                                      required="#{bindings.DateRequest.hints.mandatory}"
+                                      columns="#{bindings.DateRequest.hints.displayWidth}"
+                                      shortDesc="#{bindings.DateRequest.hints.tooltip}" id="id4"
+                                      binding="#{backingBeanScope.backing_flow_Notification.id4}" disabled="true">
+                            <f:validator binding="#{bindings.DateRequest.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.DateRequest.format}"/>
+                        </af:inputDate>
+                        <af:inputText value="#{bindings.Branch.inputValue}" label="#{bindings.Branch.hints.label}"
+                                      required="#{bindings.Branch.hints.mandatory}"
+                                      columns="#{bindings.Branch.hints.displayWidth}"
+                                      maximumLength="#{bindings.Branch.hints.precision}"
+                                      shortDesc="#{bindings.Branch.hints.tooltip}" id="it14"
+                                      binding="#{backingBeanScope.backing_flow_Notification.it14}" disabled="true">
+                            <f:validator binding="#{bindings.Branch.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.BranchComments.inputValue}"
+                                      label="#{bindings.BranchComments.hints.label}"
+                                      required="#{bindings.BranchComments.hints.mandatory}"
+                                      columns="#{bindings.BranchComments.hints.displayWidth}"
+                                      maximumLength="#{bindings.BranchComments.hints.precision}"
+                                      shortDesc="#{bindings.BranchComments.hints.tooltip}" id="it15"
+                                      binding="#{backingBeanScope.backing_flow_Notification.it15}" disabled="true">
+                            <f:validator binding="#{bindings.BranchComments.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                </af:panelBox>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:panelStretchLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_flow_Notification-->
+</ui:composition>

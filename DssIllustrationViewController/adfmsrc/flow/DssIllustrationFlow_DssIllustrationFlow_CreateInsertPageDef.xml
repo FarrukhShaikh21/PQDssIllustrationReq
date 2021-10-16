@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31"
+                id="DssIllustrationFlow_DssIllustrationFlow_CreateInsertPageDef" Package="flow" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="DssIllustrationHdView2" RangeSize="25" DataControl="dssIllustrationAMDataControl"
+              id="DssIllustrationHdView2Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="DssIllustrationHdView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

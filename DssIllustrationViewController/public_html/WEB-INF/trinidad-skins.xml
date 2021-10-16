@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>IlustrationSkin.desktop</id>
+    <family>IlustrationSkin</family>
+    <extends>skyros-v1.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>skins/IlustrationSkin/IlustrationSkin.css</style-sheet-name>
+    <bundle-name>pqt.dss.illustration.view.skinBundle</bundle-name>
+  </skin>
+</skins>

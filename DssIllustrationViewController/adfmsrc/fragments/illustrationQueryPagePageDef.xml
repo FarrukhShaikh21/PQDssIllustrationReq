@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="illustrationQueryPagePageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DssIllustrationHdView2" RangeSize="25" DataControl="dssIllustrationAMDataControl"
+              id="DssIllustrationHdView2Iterator"/>
+    <searchRegion Criteria="DssIllustrationHdViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" Binds="DssIllustrationHdView2Iterator"
+                  id="DssIllustrationHdViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DssIllustrationHdView2Iterator" id="DssIllustrationHdView2">
+      <nodeDefinition DefName="pqt.dss.illustration.model.vo.DssIllustrationHdView" Name="DssIllustrationHdView20">
+        <AttrNames>
+          <Item Value="HdIdPk"/>
+          <Item Value="IllustrationDocNo"/>
+          <Item Value="AgentCode"/>
+          <Item Value="AgentName"/>
+          <Item Value="PlanName"/>
+          <Item Value="MembershipNo"/>
+          <Item Value="WorkflowStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

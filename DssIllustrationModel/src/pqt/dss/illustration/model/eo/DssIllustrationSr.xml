@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DssIllustrationSr"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DSS_ILLUSTRATION_SR"
+  AliasName="DssIllustrationSr"
+  BindingStyle="OracleName"
+  RowClass="pqt.dss.illustration.model.eo.DssIllustrationSrImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="HdIdFk"
+    ColumnName="HD_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_ILLUSTRATION_SR"/>
+  <Attribute
+    Name="RegularContribution"
+    Precision="500"
+    ColumnName="REGULAR_CONTRIBUTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_ILLUSTRATION_SR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModeOfContribution"
+    Precision="100"
+    ColumnName="MODE_OF_CONTRIBUTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DSS_ILLUSTRATION_SR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ContributionIndexRate"
+    ColumnName="CONTRIBUTION_INDEX_RATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_ILLUSTRATION_SR"/>
+  <Attribute
+    Name="PaymentTerm"
+    ColumnName="PAYMENT_TERM"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_ILLUSTRATION_SR"/>
+  <Attribute
+    Name="ProjectionTerm"
+    ColumnName="PROJECTION_TERM"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_ILLUSTRATION_SR"/>
+  <Attribute
+    Name="TopupAmount"
+    ColumnName="TOPUP_AMOUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_ILLUSTRATION_SR"/>
+  <Attribute
+    Name="UserIdFk"
+    ColumnName="USER_ID_FK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_ILLUSTRATION_SR"/>
+  <Attribute
+    Name="EnterDate"
+    ColumnName="ENTER_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_ILLUSTRATION_SR"/>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_ILLUSTRATION_SR"/>
+  <Attribute
+    Name="LastUpdatedDate"
+    ColumnName="LAST_UPDATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DSS_ILLUSTRATION_SR"/>
+  <Attribute
+    Name="SrIdPk"
+    ColumnName="SR_ID_PK"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DSS_ILLUSTRATION_SR"
+    PrimaryKey="true"
+    IsNotNull="true"/>
+  <AccessorAttribute
+    Name="DssIllustrationHd"
+    Association="pqt.dss.illustration.model.as.hd_N_sr"
+    AssociationEnd="pqt.dss.illustration.model.as.hd_N_sr.DssIllustrationHd"
+    AssociationOtherEnd="pqt.dss.illustration.model.as.hd_N_sr.DssIllustrationSr"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="DssIllustrationSrSrIdPkCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"SR_ID_PK" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DSS_ILLUSTRATION_SR_SR_ID_PK_C"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.illustration.model.eo.DssIllustrationSr.SrIdPk"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SrIdPk1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SR_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.illustration.model.eo.DssIllustrationSr.SrIdPk"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkHdIdSr">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_HD_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_HD_ID_SR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.illustration.model.eo.DssIllustrationSr.HdIdFk"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_DssIllustrationSr">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_HD_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_DSS_ILLUSTRATION_SR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="pqt.dss.illustration.model.eo.DssIllustrationSr.HdIdFk"/>
+    </AttrArray>
+  </Key>
+</Entity>

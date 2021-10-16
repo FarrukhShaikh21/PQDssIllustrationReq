@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="pqt.dss.illustration.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/flow/DssIllustrationFlow.xml#DssIllustrationFlow@CreateInsert"
+          usageId="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_CreateInsertPageDef"/>
+    <page path="/fragments/illustrationQueryPage.jsff"
+          usageId="pqt_dss_illustration_view_illustrationQueryPagePageDef"/>
+    <page path="/illustrationPage.jsf" usageId="pqt_dss_illustration_view_illustrationPagePageDef"/>
+    <page path="/fragments/CreatePage.jsff" usageId="pqt_dss_illustration_view_CreatePagePageDef"/>
+    <page path="/fragments/illustrationUpdatePage.jsff"
+          usageId="pqt_dss_illustration_view_illustrationUpdatePagePageDef"/>
+    <page path="/WEB-INF/flow/DssIllustrationFlow.xml#DssIllustrationFlow@Rollback"
+          usageId="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_Rollback1PageDef"/>
+    <page path="/fragments/illustrationDetailPage.jsff"
+          usageId="pqt_dss_illustration_view_illustrationDetailPagePageDef"/>
+    <page path="/fragments/illustrationNotification.jsff" usageId="pqt_dss_illustration_view_NotificationPageDef"/>
+    <page path="/WEB-INF/flow/Illustration-Notification-task-flow-definition.xml#Illustration-Notification-task-flow-definition@setNVC_WfDocumentId"
+          usageId="pqt_dss_illustration_view_Illustration_Notification_task_flow_definition_Illustration_Notification_task_flow_definition_setNVC_WfDocumentIdPageDef"/>
+    <page path="/illustrationNotification.jsf" usageId="pqt_dss_illustration_view_illustrationNotificationPageDef"/>
+    <page path="/WEB-INF/flow/DssIllustrationFlow.xml#DssIllustrationFlow@DeleteCommit"
+          usageId="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_DeleteCommitPageDef"/>
+    <page path="/WEB-INF/flow/DssIllustrationFlow.xml#DssIllustrationFlow@Delete"
+          usageId="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_DeletePageDef"/>
+    <page path="/WEB-INF/flow/DssIllustrationFlow.xml#DssIllustrationFlow@illustrationSearchUser"
+          usageId="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_illustrationSearchUserPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_CreateInsertPageDef"
+          path="flow.DssIllustrationFlow_DssIllustrationFlow_CreateInsertPageDef"/>
+    <page id="pqt_dss_illustration_view_illustrationQueryPagePageDef" path="fragments.illustrationQueryPagePageDef"/>
+    <page id="pqt_dss_illustration_view_illustrationPagePageDef"
+          path="pqt.dss.illustration.view.pageDefs.illustrationPagePageDef"/>
+    <page id="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_Rollback1PageDef"
+          path="flow.DssIllustrationFlow_DssIllustrationFlow_Rollback1PageDef"/>
+    <page id="pqt_dss_illustration_view_CreatePagePageDef" path="fragments.CreatePagePageDef"/>
+    <page id="pqt_dss_illustration_view_illustrationUpdatePagePageDef" path="fragments.illustrationUpdatePagePageDef"/>
+    <page id="pqt_dss_illustration_view_illustrationDetailPagePageDef" path="fragments.illustrationDetailPagePageDef"/>
+    <page id="pqt_dss_illustration_view_NotificationPageDef" path="flow.NotificationPageDef"/>
+    <page id="pqt_dss_illustration_view_Illustration_Notification_task_flow_definition_Illustration_Notification_task_flow_definition_setNVC_WfDocumentIdPageDef"
+          path="flow.Illustration_Notification_task_flow_definition_Illustration_Notification_task_flow_definition_setNVC_WfDocumentIdPageDef"/>
+    <page id="pqt_dss_illustration_view_illustrationNotificationPageDef"
+          path="pqt.dss.illustration.view.pageDefs.illustrationNotificationPageDef"/>
+    <page id="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_DeleteCommitPageDef"
+          path="flow.DssIllustrationFlow_DssIllustrationFlow_DeleteCommitPageDef"/>
+    <page id="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_DeletePageDef"
+          path="flow.DssIllustrationFlow_DssIllustrationFlow_DeletePageDef"/>
+    <page id="pqt_dss_illustration_view_DssIllustrationFlow_DssIllustrationFlow_illustrationSearchUserPageDef"
+          path="flow.DssIllustrationFlow_DssIllustrationFlow_illustrationSearchUserPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="dssIllustrationAMDataControl" Package="pqt.dss.illustration.model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="dssIllustrationAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

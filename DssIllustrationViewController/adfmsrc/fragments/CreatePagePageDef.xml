@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="CreatePagePageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DssIllustrationSrView1" RangeSize="25" DataControl="dssIllustrationAMDataControl"
+              id="DssIllustrationSrView1Iterator"/>
+    <iterator Binds="DssIllustrationDtView1" RangeSize="25" DataControl="dssIllustrationAMDataControl"
+              id="DssIllustrationDtView1Iterator"/>
+    <iterator Binds="DssIllustrationRpView1" RangeSize="25" DataControl="dssIllustrationAMDataControl"
+              id="DssIllustrationRpView1Iterator"/>
+    <iterator Binds="DssIllustrationHdView2" RangeSize="25" DataControl="dssIllustrationAMDataControl"
+              id="DssIllustrationHdView2Iterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="dssIllustrationAMDataControl"/>
+    <attributeValues IterBinding="DssIllustrationSrView1Iterator" id="RegularContribution">
+      <AttrNames>
+        <Item Value="RegularContribution"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DssIllustrationSrView1Iterator" StaticList="false" Uses="LOV_ModeOfContribution"
+          id="ModeOfContribution" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="DssIllustrationSrView1Iterator" id="ContributionIndexRate">
+      <AttrNames>
+        <Item Value="ContributionIndexRate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DssIllustrationSrView1Iterator" StaticList="false" Uses="LOV_PaymentTerm" id="PaymentTerm"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DssIllustrationSrView1Iterator" StaticList="false" Uses="LOV_ProjectionTerm"
+          id="ProjectionTerm" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="DssIllustrationSrView1Iterator" id="TopupAmount">
+      <AttrNames>
+        <Item Value="TopupAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DssIllustrationSrView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <tree IterBinding="DssIllustrationDtView1Iterator" id="DssIllustrationDtView1">
+      <nodeDefinition DefName="pqt.dss.illustration.model.vo.DssIllustrationDtView" Name="DssIllustrationDtView10">
+        <AttrNames>
+          <Item Value="Benefits"/>
+          <Item Value="TermYears"/>
+          <Item Value="DetailAmount"/>
+          <Item Value="ExtraLoading"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="DssIllustrationDtView1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="DssIllustrationRpView1Iterator" id="NameRp">
+      <AttrNames>
+        <Item Value="NameRp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssIllustrationRpView1Iterator" id="CellNo">
+      <AttrNames>
+        <Item Value="CellNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssIllustrationRpView1Iterator" id="DateRequest">
+      <AttrNames>
+        <Item Value="DateRequest"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssIllustrationRpView1Iterator" id="Branch">
+      <AttrNames>
+        <Item Value="Branch"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssIllustrationRpView1Iterator" id="BranchComments">
+      <AttrNames>
+        <Item Value="BranchComments"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DssIllustrationRpView1Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="DssIllustrationHdView2Iterator" id="PlanName">
+      <AttrNames>
+        <Item Value="PlanName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssIllustrationHdView2Iterator" id="MembershipNo">
+      <AttrNames>
+        <Item Value="MembershipNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssIllustrationHdView2Iterator" id="DateOfBirth">
+      <AttrNames>
+        <Item Value="DateOfBirth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssIllustrationHdView2Iterator" id="ReasonSpecial">
+      <AttrNames>
+        <Item Value="ReasonSpecial"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DssIllustrationHdView2Iterator" id="IllustrationDocNo">
+      <AttrNames>
+        <Item Value="IllustrationDocNo"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="DssIllustrationHdView2Iterator" StaticList="false" Uses="LOV_BranchName"
+                  id="BranchName"/>
+    <listOfValues IterBinding="DssIllustrationHdView2Iterator" StaticList="false" Uses="LOV_AgentCode" id="AgentCode"/>
+    <attributeValues IterBinding="DssIllustrationHdView2Iterator" id="AgentName">
+      <AttrNames>
+        <Item Value="AgentName"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="Apply" RequiresUpdateModel="true" Action="invokeMethod" MethodName="Apply"
+                  IsViewObjectMethod="false" DataControl="dssIllustrationAMDataControl"
+                  InstanceName="data.dssIllustrationAMDataControl.dataProvider"/>
+    <action IterBinding="DssIllustrationDtView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
