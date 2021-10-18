@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="DssIllustrationHdView"
-  Version="12.2.1.0.31"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="true"
@@ -63,6 +63,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccLocationLov"
+    ViewObjectName="pqt.dss.illustration.model.lov.LocationLov"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_BranchName"
     ListVOName="UserBranchDtlLovVO1"
@@ -114,31 +118,51 @@
     <DisplayCriteria
       Name="AgentLOVCriteria"/>
   </ListBinding>
-  <SQLQuery><![CDATA[SELECT DssIllustrationHd.HD_ID_PK,      
-       DssIllustrationHd.PLAN_NAME,      
-       DssIllustrationHd.MEMBERSHIP_NO,      
-       DssIllustrationHd.AGENT_NO_FK,      
-       DssIllustrationHd.DATE_OF_BIRTH,      
-       DssIllustrationHd.USER_ID_FK,      
-       DssIllustrationHd.ENTER_DATE,      
-       DssIllustrationHd.LAST_UPDATED_BY,      
-       DssIllustrationHd.LAST_UPDATED_DATE,      
-       DssIllustrationHd.REASON_SPECIAL,      
-       DssIllustrationHd.DSS_NOTIF_ID_FK,      
-       DssIllustrationHd.DSS_STATUS,      
-       DssIllustrationHd.BRANCH_STATUS,      
-       DssIllustrationHd.BRANCH_NOTIF_ID_FK,      
-       (select aa.AGENT_NAME from vu_dss_illReq_agent_Dtl aa                                   
-       where DssIllustrationHd.Agent_No_Fk = aa.N_AGENT_NO) AGENT_NAME,      
-       (select aa.V_AGENT_CODE from vu_dss_illReq_agent_Dtl aa                                   
-       where DssIllustrationHd.Agent_No_Fk = aa.N_AGENT_NO) AGENT_CODE,      
-       DssIllustrationHd.ILLUSTRATION_DOC_NO,   
-       (SELECT BR.V_BRANCH_NAME   
-          FROM VU_DSS_ST_BRANCH BR   
-         WHERE BR.V_BRANCH_CODE = DssIllustrationHd.Branch_Code_Fk) BRANCH_NAME,   
-       DssIllustrationHd.Branch_Code_Fk, 
-       DssIllustrationHd.Workflow_Status, 
-       DssIllustrationHd.Workflow_Notification_Id 
+  <ListBinding
+    Name="LOV_GisLocationIdFk"
+    ListVOName="AccLocationLov"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GisLocationIdFk"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="IlLocIdPk"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Location"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT DssIllustrationHd.HD_ID_PK,       
+       DssIllustrationHd.PLAN_NAME,       
+       DssIllustrationHd.MEMBERSHIP_NO,       
+       DssIllustrationHd.AGENT_NO_FK,       
+       DssIllustrationHd.DATE_OF_BIRTH,       
+       DssIllustrationHd.USER_ID_FK,       
+       DssIllustrationHd.ENTER_DATE,       
+       DssIllustrationHd.LAST_UPDATED_BY,       
+       DssIllustrationHd.LAST_UPDATED_DATE,       
+       DssIllustrationHd.REASON_SPECIAL,       
+       DssIllustrationHd.DSS_NOTIF_ID_FK,       
+       DssIllustrationHd.DSS_STATUS,       
+       DssIllustrationHd.BRANCH_STATUS,       
+       DssIllustrationHd.BRANCH_NOTIF_ID_FK,       
+       (select aa.AGENT_NAME from vu_dss_illReq_agent_Dtl aa                                    
+       where DssIllustrationHd.Agent_No_Fk = aa.N_AGENT_NO) AGENT_NAME,       
+       (select aa.V_AGENT_CODE from vu_dss_illReq_agent_Dtl aa                                    
+       where DssIllustrationHd.Agent_No_Fk = aa.N_AGENT_NO) AGENT_CODE,       
+       DssIllustrationHd.ILLUSTRATION_DOC_NO,    
+       (SELECT BR.V_BRANCH_NAME    
+          FROM VU_DSS_ST_BRANCH BR    
+         WHERE BR.V_BRANCH_CODE = DssIllustrationHd.Branch_Code_Fk) BRANCH_NAME,    
+       DssIllustrationHd.Branch_Code_Fk,  
+       DssIllustrationHd.Workflow_Status,  
+       DssIllustrationHd.Workflow_Notification_Id , 
+       DssIllustrationHd.GIS_LOCATION_ID_FK 
 FROM  DSS_ILLUSTRATION_HD DssIllustrationHd]]></SQLQuery>
   <EntityUsage
     Name="DssIllustrationHd"
@@ -409,6 +433,20 @@ FROM  DSS_ILLUSTRATION_HD DssIllustrationHd]]></SQLQuery>
     EntityAttrName="WorkflowNotificationId"
     EntityUsage="DssIllustrationHd"
     AliasName="WORKFLOW_NOTIFICATION_ID"/>
+  <ViewAttribute
+    Name="GisLocationIdFk"
+    PrecisionRule="true"
+    EntityAttrName="GisLocationIdFk"
+    EntityUsage="DssIllustrationHd"
+    AliasName="GIS_LOCATION_ID_FK"
+    LOVName="LOV_GisLocationIdFk">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="DssIllustrationHdViewCriteria"
     ViewObjectName="pqt.dss.illustration.model.vo.DssIllustrationHdView"

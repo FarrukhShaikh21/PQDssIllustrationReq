@@ -22,7 +22,7 @@
                 <af:toolbar id="t2" binding="#{backingBeanScope.backing_fragments_illustrationQueryPage.t2}">
                     <af:button text="Create" id="b2"
                                binding="#{backingBeanScope.backing_fragments_illustrationQueryPage.b2}"
-                               action="goCreate"/>
+                               action="goCreate" disabled="#{sessionScope.SSV_UserType != 'BO'}"/>
                 </af:toolbar>
             </f:facet>
             <f:facet name="statusbar"/>

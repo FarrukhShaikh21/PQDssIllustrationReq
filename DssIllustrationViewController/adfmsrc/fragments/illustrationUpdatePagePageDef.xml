@@ -128,5 +128,7 @@
         <Item Value="ReasonSpecial"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="DssIllustrationHdView2Iterator" StaticList="false" Uses="LOV_GisLocationIdFk"
+          id="GisLocationIdFk" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

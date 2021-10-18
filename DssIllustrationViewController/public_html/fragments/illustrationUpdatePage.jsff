@@ -4,7 +4,20 @@
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_fragments_illustrationUpdatePage-->
     <af:panelHeader text="Illustration Request Form" id="ph1"
                     binding="#{backingBeanScope.backing_fragments_illustrationUpdatePage.ph1}">
-        <f:facet name="context"/>
+        <f:facet name="context">
+            <af:panelGroupLayout id="pgl1" layout="horizontal">
+                <af:outputText value="(" id="ot1"/>
+                <af:selectOneChoice value="#{bindings.GisLocationIdFk.inputValue}"
+                                    label="#{bindings.GisLocationIdFk.label}"
+                                    required="#{bindings.GisLocationIdFk.hints.mandatory}"
+                                    shortDesc="#{bindings.GisLocationIdFk.hints.tooltip}" id="soc6" simple="true"
+                                    contentStyle="font-weight:bold" readOnly="true">
+                    <f:selectItems value="#{bindings.GisLocationIdFk.items}" id="si6"/>
+                    <f:validator binding="#{bindings.GisLocationIdFk.validator}"/>
+                </af:selectOneChoice>
+                <af:outputText value=")" id="ot2"/>
+            </af:panelGroupLayout>
+        </f:facet>
         <f:facet name="toolbar">
             <af:toolbar id="t1" binding="#{backingBeanScope.backing_fragments_illustrationUpdatePage.t1}">
                 <af:button text="Apply" id="b2"
